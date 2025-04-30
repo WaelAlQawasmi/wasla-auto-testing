@@ -5,6 +5,7 @@ namespace Tests\Browser;
 use Laravel\Dusk\Browser;
 
 // test comment
+// ok
 use Tests\DuskTestCase;
 
 class DashboardTest extends DuskTestCase

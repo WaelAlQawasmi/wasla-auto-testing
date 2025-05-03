@@ -213,10 +213,10 @@ class AdminPortaldTest extends DuskTestCase
                 ->press('#btn-add-new-admin')
                 ->waitForLocation('/admin/create')
                 ->type('name', 'rania')
-                ->type('email', 'ran@wasla.com')
+                ->type('email', $randomEmail)
                 ->type('password', 'r1234567')
                 ->type('password_confirmation', 'r1234567j')
-                ->type('mobile', '0786742345')
+                ->type('mobile', $randomMobile)
                 ->select('role_id', '1')
                 ->press('#btn-create-admin')
 
@@ -559,7 +559,7 @@ class AdminPortaldTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             // We are already logged in at this point
-            $browser->visit(self::APP_URL.'/admin/system-settings')
+            $browser->visit('https://wasla-jo.laravel.cloud/admin/system-settings')
                 ->waitForLocation('/admin/system-settings')
                 ->assertsee('Admin Panel')
                 ->assertsee('System Settings')
